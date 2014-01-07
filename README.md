@@ -10,3 +10,16 @@ different types of filtering of announcements:
  * non site-wide (these can be used a strictly a mailing if so desired)
  * members only (announcements are filtered based on the value of
    ``request.user``)
+
+adding announcements in templates
+---
+add context processor in `TEMPLATE_CONTEXT_PROCESSORS` in `settings.py`
+
+add below code sinppet in templates
+
+    {% if  announcements %}
+        {% for announcement in announcements %}
+            {{announcement.content}}
+        {% endfor %}
+    {% endif %}
+
